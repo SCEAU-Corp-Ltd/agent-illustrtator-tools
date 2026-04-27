@@ -1,0 +1,22 @@
+# Runtime state
+.tmp/
+logs/
+cache/
+
+# Local secrets
+*.env
+*.local.*
+
+# Generated artifacts
+*.bak
+
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
