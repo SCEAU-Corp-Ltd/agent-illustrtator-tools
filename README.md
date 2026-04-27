@@ -2,6 +2,8 @@
 
 Public notes and examples for using Adobe Illustrator MCP server tools.
 
+These workflow notes were prepared using Codex.
+
 ## Contents
 
 | Path | Purpose |
