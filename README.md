@@ -18,6 +18,12 @@ come from the Adobe MCP server, and automation is handled through Codex.
 
 Use the docs as generic operating references for MCP server tools.
 
+## Adobe MCP Docs
+
+- [About using desktop AI tools with Adobe Illustrator (Beta)](https://helpx.adobe.com/au/illustrator/desktop/connect-with-other-apps-and-tools/about-using-ai-tools-with-illustrator.html)
+- [Connect Adobe Illustrator (Beta) to AI tools](https://helpx.adobe.com/illustrator/desktop/connect-with-other-apps-and-tools/connect-illustrator-to-ai-tools.html)
+- [Work with Adobe Illustrator (Beta) documents from AI tools](https://helpx.adobe.com/illustrator/desktop/connect-with-other-apps-and-tools/work-with-illustrator-documents-from-ai-tools.html)
+
 ## Illustrator MCP Snapshot
 
 The current documented Adobe Illustrator MCP surface has 43 exposed callable

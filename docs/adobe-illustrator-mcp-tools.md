@@ -5,6 +5,12 @@ Current documented callable surface: 43 functions.
 Available functions can vary by server or bridge version. Verify the active
 tool list before relying on this snapshot.
 
+Official Adobe references:
+
+- [About using desktop AI tools with Adobe Illustrator (Beta)](https://helpx.adobe.com/au/illustrator/desktop/connect-with-other-apps-and-tools/about-using-ai-tools-with-illustrator.html)
+- [Connect Adobe Illustrator (Beta) to AI tools](https://helpx.adobe.com/illustrator/desktop/connect-with-other-apps-and-tools/connect-illustrator-to-ai-tools.html)
+- [Work with Adobe Illustrator (Beta) documents from AI tools](https://helpx.adobe.com/illustrator/desktop/connect-with-other-apps-and-tools/work-with-illustrator-documents-from-ai-tools.html)
+
 ## Document
 
 | # | Function | Attributes |
