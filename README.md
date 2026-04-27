@@ -1,9 +1,14 @@
 # Agent-Illustrtator-Tools
 
-Public notes and examples for using Adobe Illustrator MCP server tools.
+Public notes and examples for using Adobe Illustrator MCP server tools with
+Codex.
 
 This workflow has been used for AI-run automated coloring: Illustrator tools
 come from the Adobe MCP server, and automation is handled through Codex.
+
+This depends on Adobe Illustrator (Beta). Adobe documents the MCP server as a
+Beta feature for connecting desktop AI tools, including Codex, to Illustrator
+(Beta).
 
 ## Contents
 
@@ -17,6 +22,13 @@ come from the Adobe MCP server, and automation is handled through Codex.
 ## Use
 
 Use the docs as generic operating references for MCP server tools.
+
+## Scope
+
+- AI-assisted Illustrator automation
+- Adobe MCP server tools exposed by Illustrator (Beta)
+- Codex-driven tool calls and workflow orchestration
+- Automated coloring and recoloring examples
 
 ## Adobe MCP Docs
 
