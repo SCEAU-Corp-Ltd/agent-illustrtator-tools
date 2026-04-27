@@ -2,7 +2,8 @@
 
 Public notes and examples for using Adobe Illustrator MCP server tools.
 
-These workflow notes were prepared using Codex.
+This work uses Illustrator tools from the Adobe MCP server, with automation
+handled through Codex.
 
 ## Contents
 
