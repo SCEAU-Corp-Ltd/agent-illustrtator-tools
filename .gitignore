@@ -2,10 +2,22 @@
 .tmp/
 logs/
 cache/
+sessions/
+archived_sessions/
 
 # Local secrets
 *.env
 *.local.*
+auth.json
+cap_sid
+installation_id
+
+# Private project context
+profiles/
+machines/
+exports/
+screenshots/private/
+screenshots/local/
 
 # Generated artifacts
 *.bak
