@@ -113,6 +113,55 @@ use `docs/illustrator-menu-command-links.md` as a public command-value
 reference and verify version, document, and selection requirements before
 running a command.
 
+### macOS Menu Command Bridge
+
+On macOS, `app.executeMenuCommand()` can be called through AppleScript even
+when the MCP server does not expose an `ExecuteMenuCommand` tool:
+
+```bash
+osascript -e 'tell application "Adobe Illustrator" to do javascript "app.executeMenuCommand(\"enterFocus\")"'
+```
+
+This bridges the gap between the 43-tool MCP surface and the full 786-command
+menu reference. Any command value from `docs/illustrator-menu-command-links.md`
+can be executed this way. Common examples:
+
+| Command value | Menu path | Use case |
+|---|---|---|
+| `enterFocus` | Other Object > Isolate Selected Object | Access symbol internals |
+| `exitFocus` | Other Object > Exit Isolation Mode | Return to document root |
+| `Recolor Art Dialog` | Edit > Edit Colors > Recolor Artwork... | Opens recolor dialog |
+| `Expand3` | Object > Expand... | Expand selected objects |
+| `expandStyle` | Object > Expand Appearance | Expand appearance attributes |
+| `undo` | Edit > Undo | Undo last action |
+| `selectall` | Edit > Select All | Select all at current level |
+
+`executeMenuCommand` returns `undefined`; success or failure must be verified
+by inspecting document state afterward.
+
+### Symbol Internals via Isolation Mode
+
+`GetObjectStructure` treats symbol instances as opaque — no children are
+returned. `breakLink()` unpacks only the top level of the symbol definition,
+which may contain only overlay elements (logos, detail lines) while body
+content remains inside nested structures.
+
+To access all content inside a symbol:
+
+1. Select the symbol instance (`SelectObjects`).
+2. Execute `enterFocus` to enter isolation mode.
+3. Use `selectall` and ExtendScript to enumerate all paths at that level.
+4. Execute `enterFocus` again to drill into nested groups or sub-symbols.
+5. Repeat until the target paths are found.
+6. Modify paths as needed (recolor, transform).
+7. Execute `exitFocus` to return up one level; repeat until back at the
+   document root.
+
+**MCP limitation:** The 43-tool MCP server refuses all calls while in
+isolation mode and returns an error asking the user to exit first. Use
+ExtendScript via the AppleScript bridge (macOS) or `ExecuteMenuCommand` (when
+available) to operate inside isolation mode.
+
 ## Attribute Notes
 
 - `?` means optional.
