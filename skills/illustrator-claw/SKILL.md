@@ -1,19 +1,19 @@
 ---
-name: openclaw
-description: Public-safe OpenClaw setup and automation workflow for connecting an OpenClaw agent runner to this Illustrator MCP repository. Use when Codex needs to document, configure, or verify OpenClaw workspace setup; design OpenClaw automations; connect OpenClaw to Illustrator MCP tools; use the Illustrator menu command index; or keep OpenClaw-related repo changes free of secrets, private paths, hostnames, logs, and local runtime state.
+name: illustrator-claw
+description: Public-safe Illustrator Claw setup and automation workflow for connecting an Illustrator Claw agent runner to this Illustrator MCP repository. Use when Codex needs to document, configure, or verify Illustrator Claw workspace setup; design Illustrator Claw automations; connect Illustrator Claw to Illustrator MCP tools; use the Illustrator menu command index; or keep Illustrator Claw-related repo changes free of secrets, private paths, hostnames, logs, and local runtime state.
 ---
 
-# OpenClaw
+# Illustrator Claw
 
-Use this skill to make OpenClaw work with this public Illustrator automation
+Use this skill to make Illustrator Claw work with this public Illustrator automation
 repo without leaking private setup details.
 
 ## Load References
 
 Read only what the task needs:
 
-- `docs/openclaw-public-setup.md` for beginner connection steps.
-- `docs/openclaw-automation-blueprints.md` for safe automation patterns.
+- `docs/illustrator-claw-public-setup.md` for beginner connection steps.
+- `docs/illustrator-claw-automation-blueprints.md` for safe automation patterns.
 - `docs/public-boundary.md` before any public repo edit.
 - `docs/adobe-illustrator-mcp-tools.md` for callable Illustrator MCP tools.
 - `docs/illustrator-menu-command-links.md` for Illustrator menu command values.
@@ -26,12 +26,12 @@ Keep these out of committed files and public answers:
 
 - API keys, bearer tokens, auth files, session files, logs, caches, local
   databases, and environment files.
-- Private OpenClaw workspace names, hostnames, gateway details, account names,
+- Private Illustrator Claw workspace names, hostnames, gateway details, account names,
   local absolute paths, schedules, and agent logs.
 - Client artwork, document names, screenshots, thumbnails, exports, and private
   production prompts.
 
-Use placeholders such as `[private OpenClaw workspace]` or `[local MCP URL]`
+Use placeholders such as `[private Illustrator Claw workspace]` or `[local MCP URL]`
 when an example needs a value.
 
 ## Connection Workflow
@@ -39,10 +39,10 @@ when an example needs a value.
 1. Confirm whether the task is public documentation or live private setup.
 2. For public docs, explain components and verification steps without copying
    private values.
-3. For live setup, verify the actual OpenClaw runtime or workspace before
+3. For live setup, verify the actual Illustrator Claw runtime or workspace before
    trusting exported notes.
-4. Confirm the repo checkout is readable by OpenClaw.
-5. Keep MCP server URLs and bearer tokens in the user's private OpenClaw
+4. Confirm the repo checkout is readable by Illustrator Claw.
+5. Keep MCP server URLs and bearer tokens in the user's private Illustrator Claw
    settings or secret store.
 6. Verify the connected tool list before attempting document or artwork calls.
 7. Test Illustrator automation on a blank or disposable document first.
@@ -72,7 +72,7 @@ When using menu command data:
 
 ## Repo Edit Checks
 
-Before committing OpenClaw-related repo changes:
+Before committing Illustrator Claw-related repo changes:
 
 ```bash
 git diff --check

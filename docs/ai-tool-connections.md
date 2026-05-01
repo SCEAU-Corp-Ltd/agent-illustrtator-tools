@@ -13,7 +13,7 @@ shape.
 | AI tool | Public note |
 |---|---|
 | Codex | Use the Adobe MCP server connection and ask Codex to adapt the workflow into Codex-compatible tool calls. |
-| OpenClaw | Point an OpenClaw workspace at this repo, configure MCP servers privately, and keep tokens out of git. Start with `docs/openclaw-public-setup.md`; Codex-compatible agents can use `skills/openclaw/SKILL.md` as `$openclaw`. |
+| Illustrator Claw | Point an Illustrator Claw workspace at this repo, configure MCP servers privately, and keep tokens out of git. Start with `docs/illustrator-claw-public-setup.md`; Codex-compatible agents can use `skills/illustrator-claw/SKILL.md` as `$illustrator-claw`. |
 | Claude Code | Adobe documents Claude Code as a supported desktop AI tool path. Ask Claude Code to adapt the workflow to its MCP command format. |
 | Cursor | Adobe documents Cursor as a supported desktop AI tool path. Ask Cursor to adapt the workflow to its MCP settings format. |
 | Other tools | Use the Adobe MCP server URL/key pattern only if the tool supports compatible MCP configuration. Ask the AI tool to adjust the workflow accordingly. |
@@ -24,8 +24,8 @@ Do not paste real MCP keys or full connection commands into this repository.
 Connection commands can include authentication material unique to an Illustrator
 (Beta) installation.
 
-For OpenClaw, keep workspace names, hostnames, bearer tokens, API keys, local
-paths, and agent logs in private OpenClaw state. Public docs should explain what
+For Illustrator Claw, keep workspace names, hostnames, bearer tokens, API keys, local
+paths, and agent logs in private Illustrator Claw state. Public docs should explain what
 needs to exist and how to verify it, without copying the private values.
 
 ## Official References

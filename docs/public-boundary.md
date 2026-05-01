@@ -21,7 +21,7 @@ tools with AI-assisted workflows.
 - Private screenshots, document thumbnails, file paths, document titles, or
   visible local account details.
 - Machine-specific setup notes, local profiles, sessions, logs, and caches.
-- Private OpenClaw workspace names, hostnames, agent names, gateway details, and
+- Private Illustrator Claw workspace names, hostnames, agent names, gateway details, and
   schedule logs.
 
 ## Working With Real Projects
@@ -41,6 +41,6 @@ git diff --cached --name-only
 Then search the staged content for tokens, keys, private paths, and project
 names before pushing.
 
-Public OpenClaw setup docs should stay portable: name the required components,
+Public Illustrator Claw setup docs should stay portable: name the required components,
 verification steps, and safety checks, but leave real connection values in the
-user's private OpenClaw configuration.
+user's private Illustrator Claw configuration.

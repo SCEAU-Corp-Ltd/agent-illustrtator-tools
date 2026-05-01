@@ -5,7 +5,7 @@ This repository is for public, generic MCP server tool notes and examples.
 Accepted contributions:
 
 - Generic Adobe Illustrator MCP workflow notes.
-- Generic OpenClaw setup and automation notes.
+- Generic Illustrator Claw setup and automation notes.
 - Public documentation links.
 - Public reference data with source attribution.
 - Redacted examples that do not expose local paths, keys, document names, or
@@ -19,7 +19,7 @@ Do not contribute:
 - Private profiles, machine setup notes, client/project names, source files, or
   screenshots from non-public work.
 - Generated logs, sessions, cache files, or local runtime state.
-- Private OpenClaw agent names, hostnames, gateway details, schedules, or
+- Private Illustrator Claw agent names, hostnames, gateway details, schedules, or
   workspace paths.
 
 For Claude Code, Cursor, Codex, or another AI client, keep the repo guidance

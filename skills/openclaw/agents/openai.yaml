@@ -1,4 +1,0 @@
-interface:
-  display_name: "OpenClaw"
-  short_description: "Connect OpenClaw to public agent workflows"
-  default_prompt: "Use $openclaw to connect my OpenClaw workspace to this repo and run a safe read-only verification."

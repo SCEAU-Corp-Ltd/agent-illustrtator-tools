@@ -1,6 +1,6 @@
-# OpenClaw Automation Blueprints
+# Illustrator Claw Automation Blueprints
 
-These are public automation patterns for using OpenClaw-style AI agents with
+These are public automation patterns for using Illustrator Claw-style AI agents with
 Illustrator MCP tools and the menu command reference data in this repo.
 
 Keep production documents, private prompts, private endpoints, and tokens out of
@@ -71,4 +71,4 @@ settings. Do not export until the settings are approved.
   command-palette workflows.
 - Keep per-project instructions in a private workspace.
 - Keep public docs generic enough that another user can follow them with their
-  own OpenClaw instance and their own Illustrator setup.
+  own Illustrator Claw instance and their own Illustrator setup.

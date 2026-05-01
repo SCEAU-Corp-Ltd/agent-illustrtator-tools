@@ -1,0 +1,4 @@
+interface:
+  display_name: "Illustrator Claw"
+  short_description: "Connect Illustrator Claw to public agent workflows"
+  default_prompt: "Use $illustrator-claw to connect my Illustrator Claw workspace to this repo and run a safe read-only verification."

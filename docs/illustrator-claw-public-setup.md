@@ -1,6 +1,6 @@
-# OpenClaw Public Setup
+# Illustrator Claw Public Setup
 
-Use this guide to connect your own OpenClaw agent runner to this public
+Use this guide to connect your own Illustrator Claw agent runner to this public
 Illustrator automation repository.
 
 This file is intentionally generic. Do not copy private hostnames, account
@@ -9,18 +9,18 @@ agent logs into this repo.
 
 ## What You Need
 
-- A working OpenClaw install or hosted OpenClaw workspace.
-- Access to an AI model provider configured in your own private OpenClaw
+- A working Illustrator Claw install or hosted Illustrator Claw workspace.
+- Access to an AI model provider configured in your own private Illustrator Claw
   settings.
 - Git access to this repository.
 - Adobe Illustrator (Beta) with its MCP server enabled for Illustrator-specific
   workflows.
 - A private place for secrets, such as environment variables, your operating
-  system keychain, or your OpenClaw secret store.
+  system keychain, or your Illustrator Claw secret store.
 
 ## Get The Repo
 
-Clone the public repository and use it as the OpenClaw workspace:
+Clone the public repository and use it as the Illustrator Claw workspace:
 
 ```bash
 git clone https://github.com/SCEAU-Corp-Ltd/Agent-Illustrtator-Tools.git
@@ -31,13 +31,13 @@ The agent should read `README.md`, `docs/public-boundary.md`,
 `docs/adobe-illustrator-mcp-tools.md`, and the workflow files before making
 changes.
 
-## Connect OpenClaw
+## Connect Illustrator Claw
 
-1. Create or open an OpenClaw workspace that points at this checkout.
+1. Create or open an Illustrator Claw workspace that points at this checkout.
 2. Give the agent read access to the repo.
 3. Give write access only when you want the agent to edit docs, workflows, or
    tooling.
-4. Add any MCP servers in your private OpenClaw settings, not in this repo.
+4. Add any MCP servers in your private Illustrator Claw settings, not in this repo.
 5. Store API keys, bearer tokens, and local MCP connection strings in your
    private secret store.
 6. Run a short verification task before asking for real work.
@@ -46,13 +46,13 @@ Private values to set locally:
 
 | Value | Purpose | Commit it? |
 |---|---|---|
-| Workspace path | Tells OpenClaw where this repo is checked out. | No |
-| Model provider key | Lets OpenClaw call your AI model provider. | No |
-| Illustrator MCP URL | Lets OpenClaw reach your local Illustrator MCP server. | No |
+| Workspace path | Tells Illustrator Claw where this repo is checked out. | No |
+| Model provider key | Lets Illustrator Claw call your AI model provider. | No |
+| Illustrator MCP URL | Lets Illustrator Claw reach your local Illustrator MCP server. | No |
 | Illustrator MCP bearer token | Authenticates local MCP calls. | No |
 | Export/output folder | Keeps generated files out of this public repo. | No |
 
-Use your OpenClaw version's actual settings format. If you use a `.env` file,
+Use your Illustrator Claw version's actual settings format. If you use a `.env` file,
 keep it local and untracked.
 
 Minimal verification prompt:
@@ -68,10 +68,10 @@ tools are documented. Do not edit files.
 1. Open Adobe Illustrator (Beta).
 2. Enable or start the Illustrator MCP server using Adobe's current
    instructions.
-3. Copy the local MCP endpoint and bearer token into your private OpenClaw MCP
+3. Copy the local MCP endpoint and bearer token into your private Illustrator Claw MCP
    configuration.
-4. Restart or reload the OpenClaw agent runner if your setup requires it.
-5. Ask OpenClaw to list available MCP tools.
+4. Restart or reload the Illustrator Claw agent runner if your setup requires it.
+5. Ask Illustrator Claw to list available MCP tools.
 6. Test on a blank or disposable Illustrator file first.
 
 The first useful live check is:
@@ -104,8 +104,8 @@ Rules for agents:
 
 ## Safe First Tasks
 
-- Verify OpenClaw can read this repo.
-- Verify OpenClaw can list its configured tools.
+- Verify Illustrator Claw can read this repo.
+- Verify Illustrator Claw can list its configured tools.
 - Read the repo and produce a public-only setup summary.
 - List documented Illustrator MCP tools.
 - Run a read-only Illustrator document inspection.
@@ -117,7 +117,7 @@ Rules for agents:
 
 | Symptom | Check |
 |---|---|
-| OpenClaw can read the repo but cannot use Illustrator | Confirm the Illustrator MCP server is running and configured in private OpenClaw settings. |
+| Illustrator Claw can read the repo but cannot use Illustrator | Confirm the Illustrator MCP server is running and configured in private Illustrator Claw settings. |
 | Tool listing works but document calls fail | Open a test Illustrator document and retry `ListDocuments`. |
 | Menu command has no effect | Confirm the command is valid for your Illustrator version and that document or selection requirements are met. |
 | Agent wants to paste a token into a doc | Stop the run and move the token to a private secret store. |
@@ -128,7 +128,7 @@ Rules for agents:
 This repository should only contain reusable public notes. Keep these out of
 git:
 
-- OpenClaw tokens, API keys, session files, logs, caches, and local databases.
+- Illustrator Claw tokens, API keys, session files, logs, caches, and local databases.
 - Full local MCP connection commands if they include secrets.
 - Private agent names, hostnames, account names, or workspace paths.
 - Client artwork, screenshots, file names, and production documents.

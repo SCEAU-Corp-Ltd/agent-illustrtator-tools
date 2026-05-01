@@ -20,10 +20,10 @@ Beta feature for connecting desktop AI tools, including Codex, to Illustrator
 | `docs/ai-tool-connections.md` | Notes for Codex, Claude Code, Cursor, and other AI tools. |
 | `docs/adobe-illustrator-mcp-tools.md` | Current Illustrator MCP function snapshot. |
 | `docs/illustrator-menu-command-links.md` | Searchable Illustrator menu command value index. |
-| `docs/openclaw-public-setup.md` | Generic OpenClaw setup guide for this repo. |
-| `docs/openclaw-automation-blueprints.md` | Public OpenClaw automation ideas and prompt starters. |
+| `docs/illustrator-claw-public-setup.md` | Generic Illustrator Claw setup guide for this repo. |
+| `docs/illustrator-claw-automation-blueprints.md` | Public Illustrator Claw automation ideas and prompt starters. |
 | `docs/public-boundary.md` | What belongs here and what stays private. |
-| `skills/openclaw/SKILL.md` | Codex skill for public-safe OpenClaw workflows. |
+| `skills/illustrator-claw/SKILL.md` | Codex skill for public-safe Illustrator Claw workflows. |
 | `tools/listener-playground/` | Local HTTP listener for MCP/MCPO event experiments. |
 | `tools/build-menu-command-links.py` | Rebuilds the generated menu command index. |
 | `workflows/illustrator-recolor.md` | Practical recolor workflow using appearance and QA tools. |
@@ -33,10 +33,10 @@ Beta feature for connecting desktop AI tools, including Codex, to Illustrator
 
 Use the docs as generic operating references for MCP server tools.
 
-For OpenClaw, start with `docs/openclaw-public-setup.md`, then use
-`docs/openclaw-automation-blueprints.md` to choose safe first automations.
-Codex-compatible agents can also invoke `skills/openclaw/SKILL.md` as
-`$openclaw`.
+For Illustrator Claw, start with `docs/illustrator-claw-public-setup.md`, then use
+`docs/illustrator-claw-automation-blueprints.md` to choose safe first automations.
+Codex-compatible agents can also invoke `skills/illustrator-claw/SKILL.md` as
+`$illustrator-claw`.
 
 For other AI tools, including Claude Code, Cursor, or another MCP-compatible
 client, use the same Adobe MCP server concept and ask that AI tool to adapt the
@@ -47,7 +47,7 @@ workflow and connection steps to its own MCP configuration format.
 - AI-assisted Illustrator automation
 - Adobe MCP server tools exposed by Illustrator (Beta)
 - Codex-driven tool calls and workflow orchestration
-- OpenClaw-style public setup and automation patterns
+- Illustrator Claw-style public setup and automation patterns
 - Illustrator menu command reference data
 - Automated coloring and recoloring examples
 
