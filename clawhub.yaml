@@ -1,0 +1,32 @@
+name: illustrator-claw
+display_name: "Illustrator Claw"
+version: "1.0.0"
+description: >
+  Public automation notes and agent skill for connecting AI tools to Adobe
+  Illustrator (Beta) via its MCP server. Includes Illustrator Claw setup
+  guides, 43-function MCP tool snapshot, recolor and export workflows,
+  menu command reference data, and Codex/Claude-compatible skill file.
+author: SCEAU-Corp-Ltd
+license: MIT
+repository: https://github.com/SCEAU-Corp-Ltd/Agent-Illustrtator-Tools
+skill_file: skills/illustrator-claw/SKILL.md
+skill_ref: "$illustrator-claw"
+category: design-automation
+tags:
+  - adobe-illustrator
+  - mcp
+  - automation
+  - recolor
+  - design
+  - codex
+  - claude-code
+  - cursor
+platforms:
+  - codex
+  - claude-code
+  - cursor
+  - illustrator-claw
+requirements:
+  - Adobe Illustrator (Beta) with MCP server enabled
+  - AI model provider configured in private settings
+  - Git access to this repository

@@ -1,0 +1,13 @@
+interface:
+  display_name: "Illustrator Claw"
+  short_description: "Connect Illustrator Claw to Adobe Illustrator MCP workflows via Claude Code"
+  default_prompt: "Use $illustrator-claw to inspect the active Illustrator document and report its artboard structure and preflight status."
+  skill_ref: "$illustrator-claw"
+  skill_file: "../SKILL.md"
+  platform: claude-code
+  tags:
+    - adobe
+    - illustrator
+    - mcp
+    - automation
+    - design

@@ -1,0 +1,38 @@
+name: "Illustrator Claw Agent Tools"
+id: illustrator-claw-agent-tools
+version: "1.0.0"
+description: >
+  Public automation notes, agent skill, and MCP tool reference for connecting
+  AI tools to Adobe Illustrator (Beta) via the Adobe MCP server. Includes
+  a 43-function MCP tool snapshot, recolor and export workflows, automation
+  blueprints, and a searchable menu command index.
+author:
+  name: SCEAU Corp Ltd
+  url: https://github.com/SCEAU-Corp-Ltd
+category: automation
+host_app: adobe-illustrator
+host_app_version: ">=28.0.0"
+license: MIT
+repository: https://github.com/SCEAU-Corp-Ltd/Agent-Illustrtator-Tools
+support_url: https://github.com/SCEAU-Corp-Ltd/Agent-Illustrtator-Tools/issues
+tags:
+  - ai-tools
+  - mcp
+  - automation
+  - codex
+  - claude-code
+  - agent
+compatible_ai_tools:
+  - name: Codex
+    notes: Primary integration target; use openai.yaml agent config
+  - name: Claude Code
+    notes: Supported via Claude's MCP tool path; use claude.yaml agent config
+  - name: Cursor
+    notes: Supported via Cursor's MCP settings
+keywords:
+  - illustrator
+  - mcp
+  - automation
+  - recolor
+  - ai-agent
+  - design-automation
