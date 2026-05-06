@@ -14,6 +14,7 @@ Read only what the task needs:
 
 - `docs/illustrator-claw-public-setup.md` for beginner connection steps.
 - `docs/illustrator-claw-automation-blueprints.md` for safe automation patterns.
+- `workflows/design-qa-with-ollama.md` when tasks include local PNG QA via Ollama vision.
 - `docs/public-boundary.md` before any public repo edit.
 - `docs/adobe-illustrator-mcp-tools.md` for callable Illustrator MCP tools.
 - `docs/illustrator-menu-command-links.md` for Illustrator menu command values.

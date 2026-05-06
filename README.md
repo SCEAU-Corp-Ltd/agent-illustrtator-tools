@@ -1,12 +1,12 @@
 # Agent Illustrator Tools
 
+**Public repo:** [github.com/SCEAU-Corp-Ltd/agent-illustrator-tools](https://github.com/SCEAU-Corp-Ltd/agent-illustrator-tools) · open-source · safe to fork or clone.
+
 Public notes and examples for using **Adobe Illustrator (Beta)** MCP server tools from desktop AI assistants (Codex, Claude Code, Cursor, Illustrator Claw, or other MCP-capable clients). See `docs/ai-tool-connections.md` for per-tool notes.
 
 The main workflows include AI-assisted coloring and recoloring: Illustrator tools come from the Adobe MCP server, and your assistant orchestrates the calls.
 
 Adobe documents the MCP server as a Beta feature for connecting desktop AI tools to Illustrator (Beta).
-
-The published GitHub repository name still uses the spelling `Illustrtator`; the clone URL below matches that remote.
 
 ## Prerequisites
 
@@ -18,24 +18,26 @@ The published GitHub repository name still uses the spelling `Illustrtator`; the
 
 **Python 3.9+** is optional. Scripts under `tools/` use the Python standard library only—there is no `npm`/`pip` dependency install step for this repository.
 
-Optional **local vision** (PNG review or design QA):
+Optional **local vision** (PNG review or design QA — stays on your machine):
 
-- Install and run [Ollama](https://ollama.com), then pull a vision-capable tag (for example `gemma3` or `qwen2-vl`). Use `tools/ollama-vision/` for a small helper; details in `tools/ollama-vision/README.md`.
+- Install [Ollama](https://ollama.com), pull a vision tag (`ollama pull llava` or see [`tools/ollama-vision/README.md`](tools/ollama-vision/README.md)), then follow **`workflows/design-qa-with-ollama.md`** after each MCP export you care about.
 
 ## Quickstart
 
 1. **Clone this repository**
 
    ```bash
-   git clone https://github.com/SCEAU-Corp-Ltd/Agent-Illustrtator-Tools.git
-   cd Agent-Illustrtator-Tools
+   git clone https://github.com/SCEAU-Corp-Ltd/agent-illustrator-tools.git
+   cd agent-illustrator-tools
    ```
 
 2. **Connect Illustrator (Beta) to your assistant** using Adobe’s guides under [Adobe MCP Docs](#adobe-mcp-docs). Keep MCP URLs, bearer tokens, and API keys in your assistant settings or another private store—not in commits ([`docs/public-boundary.md`](docs/public-boundary.md)).
 
-3. **Read docs for your path** — start with `docs/ai-tool-connections.md`. For Illustrator Claw, continue with `docs/illustrator-claw-public-setup.md` then `docs/illustrator-claw-automation-blueprints.md`. For a concrete recolor sequence, use `workflows/illustrator-recolor.md`.
+3. **Read docs for your path** — start with `docs/ai-tool-connections.md`. For Illustrator Claw, continue with `docs/illustrator-claw-public-setup.md` then `docs/illustrator-claw-automation-blueprints.md`.
 
-4. **Optional — MCP listener** (inspect HTTP-shaped callbacks before wiring MCP/MCPO bridges):
+4. **Run a concrete MCP workflow** — use **`workflows/illustrator-recolor.md`** for recolor steps. Where noted there, attach **`workflows/design-qa-with-ollama.md`** so local vision QA is part of the same loop.
+
+5. **Optional — MCP listener** (inspect HTTP-shaped callbacks before wiring MCP/MCPO bridges):
 
    ```bash
    python3 tools/listener-playground/listener.py --host 127.0.0.1 --port 8765
@@ -44,17 +46,18 @@ Optional **local vision** (PNG review or design QA):
 
    More detail and PowerShell examples: `workflows/mcp-listener-environment.md`.
 
-5. **Optional — local vision via Ollama** (describe exported previews or references):
+6. **Optional — Ollama vision on exported PNGs** (after step 4 when you have a preview file):
 
    ```bash
-   ollama pull gemma3
-   # or: ollama pull qwen2-vl
-   # Optional: copy .env.example and set OLLAMA_* for non-default host/model.
+   ollama pull llava
+   # Optional: copy .env.example and set OLLAMA_MODEL / OLLAMA_BASE_URL.
 
    python3 tools/ollama-vision/ollama_vision.py \
-     --prompt "What should we automate first?" \
+     --prompt "Summarize colors and layout; flag clipping, misalignment, or unreadable text." \
      --image ./preview.png
    ```
+
+   Full loop (before/after, base64): **`workflows/design-qa-with-ollama.md`**.
 
 ## Configuration
 
@@ -84,9 +87,10 @@ For **secrets** (MCP tokens, cloud model keys, private hostnames), use your assi
 | `docs/public-boundary.md` | What belongs here and what stays private. |
 | `skills/illustrator-claw/SKILL.md` | Codex skill for public-safe Illustrator Claw workflows. |
 | `tools/listener-playground/` | Local HTTP listener for MCP/MCPO event experiments. |
-| `tools/ollama-vision/` | Stdlib helper for local vision models via Ollama (`gemma3`, `qwen2-vl`, etc.). |
+| `tools/ollama-vision/` | Stdlib helper for local vision models via Ollama (`llava`, `qwen2-vl`, etc.). |
 | `tools/build-menu-command-links.py` | Rebuilds the generated menu command index. |
 | `workflows/illustrator-recolor.md` | Practical recolor workflow using appearance and QA tools. |
+| `workflows/design-qa-with-ollama.md` | MCP export → local Ollama vision QA loop (optional). |
 | `workflows/mcp-listener-environment.md` | How to run and reason about the listener playground. |
 
 ## Use
@@ -131,7 +135,8 @@ attributes, and safety notes.
 
 For recoloring work, use `workflows/illustrator-recolor.md`. It turns
 `SetAppearance`, `GetVisualAppearance`, preview, preflight, and export tools
-into a repeatable sequence.
+into a repeatable sequence. Add `workflows/design-qa-with-ollama.md` when you
+want **local** vision review of exported PNGs (Ollama).
 
 For MCP/MCPO listener experiments, use `workflows/mcp-listener-environment.md`.
 

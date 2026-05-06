@@ -8,12 +8,11 @@ Small stdlib Python helper for **local multimodal chat** against Ollama's `POST 
 2. Pull a vision-capable tag, for example:
 
    ```bash
-   ollama pull gemma3
-   # or
-   ollama pull qwen2-vl
+   ollama pull llava
+   # alternatives: qwen2-vl, gemma3, minicpm-v
    ```
 
-   Use whatever tag `ollama list` shows; common ones include `gemma3`, `qwen2-vl`, `llava`, `minicpm-v`.
+   Use whatever tag `ollama list` shows; set `OLLAMA_MODEL` to match.
 
 ## Environment
 
@@ -21,7 +20,7 @@ Small stdlib Python helper for **local multimodal chat** against Ollama's `POST 
 |----------|---------|
 | `OLLAMA_BASE_URL` | API base (default `http://127.0.0.1:11434`) |
 | `OLLAMA_HOST` | Used if `OLLAMA_BASE_URL` is unset |
-| `OLLAMA_MODEL` | Default model tag (default `gemma3`) |
+| `OLLAMA_MODEL` | Default model tag (default `llava`) |
 
 ## CLI
 

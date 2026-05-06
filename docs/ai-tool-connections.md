@@ -8,6 +8,8 @@ server, with automation handled through Codex. Other tools can connect to the
 same Adobe MCP server concept when they support the required MCP connection
 shape.
 
+For **offline visual QA** of MCP-exported PNGs (optional), use a local Ollama vision model and `workflows/design-qa-with-ollama.md` — independent of which MCP client you use.
+
 ## Tool Notes
 
 | AI tool | Public note |

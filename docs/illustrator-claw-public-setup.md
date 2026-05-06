@@ -23,8 +23,8 @@ agent logs into this repo.
 Clone the public repository and use it as the Illustrator Claw workspace:
 
 ```bash
-git clone https://github.com/SCEAU-Corp-Ltd/Agent-Illustrtator-Tools.git
-cd Agent-Illustrtator-Tools
+git clone https://github.com/SCEAU-Corp-Ltd/agent-illustrator-tools.git
+cd agent-illustrator-tools
 ```
 
 The agent should read `README.md`, `docs/public-boundary.md`,

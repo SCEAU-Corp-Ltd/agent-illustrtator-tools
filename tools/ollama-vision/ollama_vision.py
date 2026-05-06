@@ -4,9 +4,9 @@
 Env (optional):
   OLLAMA_BASE_URL - default http://127.0.0.1:11434
   OLLAMA_HOST - used if OLLAMA_BASE_URL unset
-  OLLAMA_MODEL - default model tag, default gemma3
+  OLLAMA_MODEL - default model tag, default llava
 
-Pull a vision tag first, e.g. `ollama pull gemma3` or `ollama pull qwen2-vl`;
+Pull a vision tag first, e.g. `ollama pull llava` or `ollama pull qwen2-vl`;
 see `ollama list` for exact names (llava, minicpm-v, gemma3:12b, ...).
 
 CLI:
@@ -31,7 +31,7 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 DEFAULT_BASE_URL = "http://127.0.0.1:11434"
-DEFAULT_MODEL = "gemma3"
+DEFAULT_MODEL = "llava"
 DEFAULT_DESCRIBE_PROMPT = (
     "Describe this image clearly and concisely for someone automating "
     "graphic design: main subjects, colors, layout, and any visible text."
