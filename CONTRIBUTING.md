@@ -28,6 +28,11 @@ format.
 
 ## Finishing changes
 
-When edits are ready to publish: **commit with a clear message and push** to the
-default branch (usually `main`), unless a maintainer directs otherwise. Do not
-leave completed work uncommitted or unpushed.
+When edits are ready for **public** GitHub and contain nothing sensitive below:
+**commit with a clear message and push** to the default branch (usually `main`),
+unless a maintainer directs otherwise.
+
+**Do not push** (keep changes local only, revert them, or follow maintainer
+instructions) when anything might disclose **private** material—including paths,
+keys, client or internal project cues—or when content is **even loosely tied**
+to non-public people, organizations, or workflows. Prefer omission over guessing.
