@@ -25,3 +25,9 @@ Do not contribute:
 For Claude Code, Cursor, Codex, or another AI client, keep the repo guidance
 generic and ask the AI tool to adapt the workflow to its own MCP configuration
 format.
+
+## Finishing changes
+
+When edits are ready to publish: **commit with a clear message and push** to the
+default branch (usually `main`), unless a maintainer directs otherwise. Do not
+leave completed work uncommitted or unpushed.
