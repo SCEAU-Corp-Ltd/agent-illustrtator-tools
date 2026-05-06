@@ -20,7 +20,7 @@ Adobe documents the MCP server as a Beta feature for connecting desktop AI tools
 
 Optional **local vision** (PNG review or design QA — stays on your machine):
 
-- Install [Ollama](https://ollama.com), pull a vision tag (`ollama pull llava` or see [`tools/ollama-vision/README.md`](tools/ollama-vision/README.md)), then follow **`workflows/design-qa-with-ollama.md`** after each MCP export you care about.
+- Install [Ollama](https://ollama.com), pull a vision tag (`ollama pull llava`, or **Qwen / Gemma**: [`workflows/ollama-qwen-gemma-vision.md`](workflows/ollama-qwen-gemma-vision.md)), then follow **`workflows/design-qa-with-ollama.md`** after each MCP export you care about.
 
 ## Quickstart
 
@@ -35,7 +35,7 @@ Optional **local vision** (PNG review or design QA — stays on your machine):
 
 3. **Read docs for your path** — start with `docs/ai-tool-connections.md`. For Illustrator Claw, continue with `docs/illustrator-claw-public-setup.md` then `docs/illustrator-claw-automation-blueprints.md`.
 
-4. **Run a concrete MCP workflow** — use **`workflows/illustrator-recolor.md`** for recolor steps. Where noted there, attach **`workflows/design-qa-with-ollama.md`** so local vision QA is part of the same loop.
+4. **Run a concrete MCP workflow** — use **`workflows/illustrator-recolor.md`** for recolor steps. Where noted there, attach **`workflows/design-qa-with-ollama.md`** (and optionally **`workflows/ollama-qwen-gemma-vision.md`** for Qwen/Gemma-specific setup) so local vision QA is part of the same loop.
 
 5. **Optional — MCP listener** (inspect HTTP-shaped callbacks before wiring MCP/MCPO bridges):
 
@@ -58,6 +58,7 @@ Optional **local vision** (PNG review or design QA — stays on your machine):
    ```
 
    Full loop (before/after, base64): **`workflows/design-qa-with-ollama.md`**.
+   **Qwen2.5-VL or Gemma 3** tags and examples: **`workflows/ollama-qwen-gemma-vision.md`**.
 
 ## Configuration
 
@@ -87,10 +88,11 @@ For **secrets** (MCP tokens, cloud model keys, private hostnames), use your assi
 | `docs/public-boundary.md` | What belongs here and what stays private. |
 | `skills/illustrator-claw/SKILL.md` | Codex skill for public-safe Illustrator Claw workflows. |
 | `tools/listener-playground/` | Local HTTP listener for MCP/MCPO event experiments. |
-| `tools/ollama-vision/` | Stdlib helper for local vision models via Ollama (`llava`, `qwen2-vl`, etc.). |
+| `tools/ollama-vision/` | Stdlib helper for local vision models via Ollama (`llava`, `qwen2.5vl`, `gemma3`, etc.). |
 | `tools/build-menu-command-links.py` | Rebuilds the generated menu command index. |
 | `workflows/illustrator-recolor.md` | Practical recolor workflow using appearance and QA tools. |
 | `workflows/design-qa-with-ollama.md` | MCP export → local Ollama vision QA loop (optional). |
+| `workflows/ollama-qwen-gemma-vision.md` | Qwen2.5-VL / Gemma 3 vision presets and commands (optional). |
 | `workflows/mcp-listener-environment.md` | How to run and reason about the listener playground. |
 
 ## Use
@@ -135,7 +137,8 @@ attributes, and safety notes.
 
 For recoloring work, use `workflows/illustrator-recolor.md`. It turns
 `SetAppearance`, `GetVisualAppearance`, preview, preflight, and export tools
-into a repeatable sequence. Add `workflows/design-qa-with-ollama.md` when you
+into a repeatable sequence. Add `workflows/design-qa-with-ollama.md` (and optionally
+`workflows/ollama-qwen-gemma-vision.md` for **Qwen** or **Gemma** vision tags) when you
 want **local** vision review of exported PNGs (Ollama).
 
 For MCP/MCPO listener experiments, use `workflows/mcp-listener-environment.md`.

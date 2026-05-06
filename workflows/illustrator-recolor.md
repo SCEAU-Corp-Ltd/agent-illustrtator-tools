@@ -76,6 +76,7 @@ you can run a **local** vision model for a second opinion (no cloud upload):
 2. Save the preview outside this repo if it is not public ([`docs/public-boundary.md`](../docs/public-boundary.md)).
 3. Follow **`design-qa-with-ollama.md`** in this folder — same loop as human QA:
    export → `tools/ollama-vision/ollama_vision.py` → fix in Illustrator → repeat.
+   For **Qwen or Gemma** model choice and env, use **`ollama-qwen-gemma-vision.md`**.
 
 Treat model output as advisory; spot colors and brand fidelity still need spec checks.
 

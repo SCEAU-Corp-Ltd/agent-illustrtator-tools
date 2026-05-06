@@ -23,6 +23,9 @@ machine except HTTP to your local Ollama process.
    # alternatives: qwen2-vl, gemma3, minicpm-v — use `ollama list` for exact tags
    ```
 
+   For **Qwen VL vs Gemma 3** pull commands, sizes, and env presets, use
+   [`ollama-qwen-gemma-vision.md`](ollama-qwen-gemma-vision.md).
+
 3. Python **3.9+** (stdlib only — no `pip install` for this helper).
 
 Optional: copy [`.env.example`](../.env.example) into a **local** env file and set

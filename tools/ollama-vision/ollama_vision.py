@@ -6,8 +6,9 @@ Env (optional):
   OLLAMA_HOST - used if OLLAMA_BASE_URL unset
   OLLAMA_MODEL - default model tag, default llava
 
-Pull a vision tag first, e.g. `ollama pull llava` or `ollama pull qwen2-vl`;
-see `ollama list` for exact names (llava, minicpm-v, gemma3:12b, ...).
+Pull a vision tag first, e.g. `ollama pull llava`, `ollama pull qwen2.5vl:7b`,
+or `ollama pull gemma3:4b`; see `ollama list` for exact names and
+`workflows/ollama-qwen-gemma-vision.md` for Qwen/Gemma presets.
 
 CLI:
   python3 tools/ollama-vision/ollama_vision.py -p "..." -i ./x.png

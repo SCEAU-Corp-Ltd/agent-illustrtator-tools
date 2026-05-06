@@ -9,10 +9,12 @@ Small stdlib Python helper for **local multimodal chat** against Ollama's `POST 
 
    ```bash
    ollama pull llava
-   # alternatives: qwen2-vl, gemma3, minicpm-v
+   # alternatives: qwen2.5vl, qwen2-vl, gemma3 (vision tags), minicpm-v
    ```
 
    Use whatever tag `ollama list` shows; set `OLLAMA_MODEL` to match.
+
+   **Qwen or Gemma:** see [`workflows/ollama-qwen-gemma-vision.md`](../../workflows/ollama-qwen-gemma-vision.md) for recommended tags (`qwen2.5vl:7b`, `gemma3:4b`, etc.) and a full loop.
 
 ## Environment
 
