@@ -1,20 +1,79 @@
-# Agent-Illustrtator-Tools
+# Agent Illustrator Tools
 
-Public notes and examples for using Adobe Illustrator MCP server tools with
-Codex.
+Public notes and examples for using **Adobe Illustrator (Beta)** MCP server tools from desktop AI assistants (Codex, Claude Code, Cursor, Illustrator Claw, or other MCP-capable clients). See `docs/ai-tool-connections.md` for per-tool notes.
 
-This workflow has been used for AI-run automated coloring: Illustrator tools
-come from the Adobe MCP server, and automation is handled through Codex.
+The main workflows include AI-assisted coloring and recoloring: Illustrator tools come from the Adobe MCP server, and your assistant orchestrates the calls.
 
-This depends on Adobe Illustrator (Beta). Adobe documents the MCP server as a
-Beta feature for connecting desktop AI tools, including Codex, to Illustrator
-(Beta).
+Adobe documents the MCP server as a Beta feature for connecting desktop AI tools to Illustrator (Beta).
+
+The published GitHub repository name still uses the spelling `Illustrtator`; the clone URL below matches that remote.
+
+## Prerequisites
+
+| Requirement | Purpose |
+| --- | --- |
+| [Adobe Illustrator (Beta)](https://helpx.adobe.com/illustrator/desktop/connect-with-other-apps-and-tools/about-using-ai-tools-with-illustrator.html) with MCP enabled | Illustrator MCP tool calls |
+| An MCP-capable assistant | Runs automation; see `docs/ai-tool-connections.md` |
+| Git | Clone this repository (and contribute, if applicable) |
+
+**Python 3.9+** is optional. Scripts under `tools/` use the Python standard library only—there is no `npm`/`pip` dependency install step for this repository.
+
+Optional **local vision** (PNG review or design QA):
+
+- Install and run [Ollama](https://ollama.com), then pull a vision-capable tag (for example `gemma3` or `qwen2-vl`). Use `tools/ollama-vision/` for a small helper; details in `tools/ollama-vision/README.md`.
+
+## Quickstart
+
+1. **Clone this repository**
+
+   ```bash
+   git clone https://github.com/SCEAU-Corp-Ltd/Agent-Illustrtator-Tools.git
+   cd Agent-Illustrtator-Tools
+   ```
+
+2. **Connect Illustrator (Beta) to your assistant** using Adobe’s guides under [Adobe MCP Docs](#adobe-mcp-docs). Keep MCP URLs, bearer tokens, and API keys in your assistant settings or another private store—not in commits ([`docs/public-boundary.md`](docs/public-boundary.md)).
+
+3. **Read docs for your path** — start with `docs/ai-tool-connections.md`. For Illustrator Claw, continue with `docs/illustrator-claw-public-setup.md` then `docs/illustrator-claw-automation-blueprints.md`. For a concrete recolor sequence, use `workflows/illustrator-recolor.md`.
+
+4. **Optional — MCP listener** (inspect HTTP-shaped callbacks before wiring MCP/MCPO bridges):
+
+   ```bash
+   python3 tools/listener-playground/listener.py --host 127.0.0.1 --port 8765
+   curl -s http://127.0.0.1:8765/health
+   ```
+
+   More detail and PowerShell examples: `workflows/mcp-listener-environment.md`.
+
+5. **Optional — local vision via Ollama** (describe exported previews or references):
+
+   ```bash
+   ollama pull gemma3
+   # or: ollama pull qwen2-vl
+   # Optional: copy .env.example and set OLLAMA_* for non-default host/model.
+
+   python3 tools/ollama-vision/ollama_vision.py \
+     --prompt "What should we automate first?" \
+     --image ./preview.png
+   ```
+
+## Configuration
+
+Browsing the docs requires no configuration.
+
+For **secrets** (MCP tokens, cloud model keys, private hostnames), use your assistant’s configuration, Illustrator Claw private settings, or environment variables on your machine. Optional `OLLAMA_*` variables for the vision helper are listed in [`.env.example`](.env.example).
+
+## Troubleshooting
+
+- **MCP will not connect** — Confirm Illustrator (Beta) MCP is enabled and follow Adobe’s current “Connect Illustrator to AI tools” flow; verify tokens never land in Git.
+- **Listener: address already in use** — Choose another `--port` (for example `8766`).
+- **Ollama: connection refused** — Ensure the Ollama app or `ollama serve` is running and that `OLLAMA_BASE_URL` matches (default `http://127.0.0.1:11434`).
 
 ## Contents
 
 | Path | Purpose |
 |---|---|
 | `CONTRIBUTING.md` | Public contribution rules. |
+| `.env.example` | Commented optional `OLLAMA_*` defaults for `tools/ollama-vision/`. |
 | `SECURITY.md` | How to report safety or disclosure issues. |
 | `data/` | Public reference data used by the docs. |
 | `docs/ai-tool-connections.md` | Notes for Codex, Claude Code, Cursor, and other AI tools. |
@@ -25,13 +84,14 @@ Beta feature for connecting desktop AI tools, including Codex, to Illustrator
 | `docs/public-boundary.md` | What belongs here and what stays private. |
 | `skills/illustrator-claw/SKILL.md` | Codex skill for public-safe Illustrator Claw workflows. |
 | `tools/listener-playground/` | Local HTTP listener for MCP/MCPO event experiments. |
+| `tools/ollama-vision/` | Stdlib helper for local vision models via Ollama (`gemma3`, `qwen2-vl`, etc.). |
 | `tools/build-menu-command-links.py` | Rebuilds the generated menu command index. |
 | `workflows/illustrator-recolor.md` | Practical recolor workflow using appearance and QA tools. |
 | `workflows/mcp-listener-environment.md` | How to run and reason about the listener playground. |
 
 ## Use
 
-Use the docs as generic operating references for MCP server tools.
+Use the docs as generic operating references for MCP server tools ([Quickstart](#quickstart) above orients new readers).
 
 For Illustrator Claw, start with `docs/illustrator-claw-public-setup.md`, then use
 `docs/illustrator-claw-automation-blueprints.md` to choose safe first automations.
