@@ -2,6 +2,16 @@
 
 **Public repo:** [github.com/SCEAU-Corp-Ltd/agent-illustrator-tools](https://github.com/SCEAU-Corp-Ltd/agent-illustrator-tools) · open-source · safe to fork or clone.
 
+## Platform Listings
+
+| Platform | Listing file | Skill ref |
+|---|---|---|
+| ClawhHub | `clawhub.yaml` | `$illustrator-claw` |
+| OpenClaw | `skills/illustrator-claw/agents/openclaw.yaml` | `$illustrator-claw` |
+| Codex (OpenAI) | `skills/illustrator-claw/agents/openai.yaml` | `$illustrator-claw` |
+| Claude Code | `skills/illustrator-claw/agents/claude.yaml` | `$illustrator-claw` |
+| Adobe Exchange | `adobe-exchange.yaml` | — |
+
 Public notes and examples for using **Adobe Illustrator (Beta)** MCP server tools from desktop AI assistants (Codex, Claude Code, Cursor, Illustrator Claw, or other MCP-capable clients). See `docs/ai-tool-connections.md` for per-tool notes.
 
 The main workflows include AI-assisted coloring and recoloring: Illustrator tools come from the Adobe MCP server, and your assistant orchestrates the calls.
