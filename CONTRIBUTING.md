@@ -2,6 +2,12 @@
 
 This repository is for public, generic MCP server tool notes and examples.
 
+Non-developer contributors are welcome. Good contributions include:
+
+- Plain-language documentation improvements
+- Workflow clarity improvements
+- Fixes to broken links or unclear instructions
+
 Accepted contributions:
 
 - Generic Adobe Illustrator MCP workflow notes.
